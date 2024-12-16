@@ -1,0 +1,17 @@
+# Usar la imagen base de Node.js
+FROM node:18
+
+# Configurar el directorio de trabajo
+WORKDIR /app
+
+# Copiar archivos
+COPY package.json package-lock.json ./
+RUN npm install
+
+COPY . .
+
+# Construir la aplicación
+RUN npm run build
+
+# Servir la aplicación
+CMD ["npx", "serve", "-s", "build", "-l", "3000"]
