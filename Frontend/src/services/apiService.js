@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://ec2-xx-xxx-xx-xx.compute.amazonaws.com/api"; // Reemplázalo con tu URL
+const API_URL = "http://ec2-xx-xxx-xx-xx.compute.amazonaws.com/api/v1/huesped"; 
 
 const api = {
   getItems: () => axios.get(`${API_URL}/items`),
